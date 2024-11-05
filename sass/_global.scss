@@ -1,0 +1,91 @@
+@use "./thems" as *;
+@use "./media-sizing" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.contanier {
+  padding-left: 100px;
+  padding-right: 50px;
+  margin: 0 auto;
+}
+
+@include sizing("small") {
+  .contanier {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 100px;
+  p {
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: bold;
+  }
+  span {
+    color: $main-color;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 140px;
+    height: 2px;
+    background-color: $main-color;
+    top: 50px;
+    left: 45%;
+    @include sizing("small") {
+      width: 100px;
+      left: 38%;
+    }
+    @include sizing("medium") {
+      width: 100px;
+      left: 43%;
+    }
+  }
+  .section-para {
+    color: $second-color;
+    width: 750px;
+    text-align: center;
+    padding-top: 30px;
+    margin: auto;
+    @include sizing("small") {
+      width: 300px;
+      font-size: 18px;
+    }
+    @include sizing("medium") {
+      width: 350px;
+    }
+    &::first-letter {
+      color: $main-color;
+    }
+  }
+}

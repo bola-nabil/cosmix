@@ -1,0 +1,139 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+.contact {
+  .contact-boxs {
+    padding-left: 140px;
+    padding-right: 50px;
+    margin: 0 auto;
+    @include sizing("small") {
+      padding: 0 20px;
+    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    .contact-info {
+      .contact__title {
+        text-transform: uppercase;
+        color: #555;
+        font-size: 23px;
+        span {
+          color: $main-color;
+        }
+      }
+      .info-boxs {
+        margin-top: 25px;
+        .info-box {
+          display: flex;
+          padding-bottom: 25px;
+          i {
+            color: #555;
+            font-size: 13px;
+            margin-right: 10px;
+          }
+          p:first-of-type {
+            color: #555;
+            font-weight: bolder;
+            font-size: 16px;
+            margin-right: 5px;
+          }
+          .info__title {
+            color: #666;
+            font-size: 16px;
+          }
+          a:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .form-name {
+        margin-right: 17px;
+        @include sizing("small") {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+        @include sizing("medium") {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+      }
+      .form-name,
+      .form-email {
+        width: 48%;
+      }
+      @include sizing("small") {
+        .form-name,
+        .form-email {
+          width: 75%;
+        }
+      }
+      @include sizing("medium") {
+        .form-name,
+        .form-email {
+          width: 75%;
+        }
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        color: #555;
+      }
+      @include sizing("small") {
+        input {
+          width: 75%;
+        }
+      }
+      @include sizing("medium") {
+        input {
+          width: 75%;
+        }
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border: 1px solid blue;
+      }
+      textarea {
+        padding: 10px;
+        height: 100px;
+        resize: none;
+        @include sizing("small") {
+          width: 75%;
+        }
+        @include sizing("medium") {
+          width: 75%;
+        }
+      }
+      input[type="submit"] {
+        background-color: white;
+        color: $main-color;
+        font-size: 16px;
+        margin-bottom: 15px;
+        border: 2px solid $main-color;
+        cursor: pointer;
+        &:hover {
+          background-color: $main-color;
+          color: white;
+        }
+      }
+    }
+  }
+  .contact-footer {
+    background-color: $main-color;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    max-width: 100%;
+    p {
+      font-size: 25px;
+      text-transform: uppercase;
+      span {
+        font-weight: bolder;
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+.team {
+  .team-boxs {
+    padding-left: 100px;
+    padding-right: 50px;
+    @include sizing("small") {
+      padding: 0 20px;
+    }
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    .team-box {
+      border: 2px solid #eee;
+      margin-bottom: 30px;
+      padding: 0 10px 20px 10px;
+      text-align: center;
+      &:hover {
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.26);
+      }
+      &:hover > .team__title {
+        color: $main-color;
+      }
+      .team__img {
+        margin-bottom: 20px;
+        img {
+          width: 220px;
+          height: 200px;
+          @include sizing("small") {
+            width: 200px;
+          }
+        }
+      }
+      .team__title {
+        font-weight: normal;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      .team__des {
+        text-align: justify;
+        line-height: 1.7;
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 30px;
+      }
+      .team__links {
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          max-width: 100px;
+          gap: 10px;
+          margin: auto;
+          li {
+            a {
+              position: relative;
+              color: #666;
+              &:hover > .fa-facebook-f {
+                color: #1877f2;
+              }
+              &:hover > .fa-twitter {
+                color: #1da1f2;
+              }
+              &:hover > .fa-pinterest-p {
+                color: #e60023;
+              }
+              &:hover > .fa-instagram {
+                color: #833ab4;
+              }
+              &:hover > .fa-google-plus-g {
+                color: #db4437;
+              }
+              .links__title {
+                position: relative;
+                display: none;
+                background-color: black;
+                color: white;
+                font-size: 13px;
+                text-align: center;
+                padding: 2px 8px;
+                &::after {
+                  position: absolute;
+                  content: "";
+                  top: 20px;
+                  left: 35%;
+                  border-top: 8px solid black;
+                  border-bottom: 8px solid transparent;
+                  border-right: 8px solid transparent;
+                  border-left: 8px solid transparent;
+                }
+              }
+              &:hover > .links__title.facebook {
+                display: block;
+              }
+              &:hover > .links__title.twitter {
+                display: block;
+              }
+              &:hover > .links__title.pinteres {
+                display: block;
+              }
+              &:hover > .links__title.instagram {
+                display: block;
+              }
+              &:hover > .links__title.google {
+                display: block;
+              }
+              i {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .teams {
+    background-image: url("../../imgs/team-page/03.png");
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    .teams__quote {
+      z-index: 100;
+      color: white;
+      text-align: center;
+      i {
+        font-size: 40px;
+        margin-top: 40px;
+      }
+    }
+    .teams-boxs {
+      z-index: 100;
+      text-align: center;
+      .teams-box {
+        display: none;
+        .teams__img {
+          margin-top: 20px;
+          margin-bottom: 30px;
+          img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+          }
+        }
+        .teams__des {
+          font-size: 18px;
+          max-width: 800px;
+          color: white;
+          margin: auto;
+          line-height: 1.5;
+        }
+        .teams__name {
+          color: white;
+          margin-top: 30px;
+          margin-bottom: 15px;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+        .teams__job {
+          color: white;
+          text-transform: capitalize;
+          font-size: 14px;
+        }
+      }
+    }
+    .bolltes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+      .bollt {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background-color: $main-color;
+      }
+    }
+  }
+  .teams-count {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding-left: 100px;
+    padding-right: 50px;
+    @include sizing("small") {
+      padding: 0 80px;
+    }
+    margin: 50px auto;
+    .count-box {
+      margin-bottom: 50px;
+      position: relative;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-right: 1px solid #ddd;
+      }
+      margin-left: 70px;
+      .teams__numbers {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        i {
+          font-size: 23px;
+          color: #666;
+        }
+        p {
+          font-size: 25px;
+          color: $main-color;
+        }
+      }
+      & > p {
+        color: #555;
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+    }
+  }
+}

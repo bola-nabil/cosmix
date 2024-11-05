@@ -1,0 +1,91 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+.about {
+  .about-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    .left-box {
+      h2 {
+        font-size: 23px;
+        font-weight: bolder;
+        &::first-letter {
+          color: $main-color;
+        }
+      }
+      p {
+        padding: 10px 0;
+        line-height: 1.5;
+        text-align: justify;
+        @include sizing("small") {
+          font-size: 13px;
+          width: 75%;
+        }
+      }
+    }
+    .right-box {
+      text-align: center;
+      img {
+        max-width: 500px;
+        max-height: 250px;
+        @include sizing("small") {
+          margin-left: -100px;
+        }
+      }
+    }
+  }
+  .about-paying {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(372px, 1fr));
+    justify-content: space-between;
+    max-width: 100%;
+    align-items: center;
+    background-color: $main-color;
+    margin-top: 50px;
+    padding: 30px 50px 30px 100px;
+    @include sizing("small") {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      padding: 30px 10px;
+    }
+    @include sizing("medium") {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .about-infs {
+      h3 {
+        color: white;
+        font-size: 25px;
+        @include sizing("small") {
+          font-size: 18px;
+        }
+      }
+      p {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding-top: 10px;
+      }
+    }
+    .btn__downlaod {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        text-transform: capitalize;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        border: 2px solid white;
+        &:hover {
+          transition: 0.5s ease-in;
+          background-color: white;
+          color: $main-color;
+          -webkit-transition: 0.5s ease-in;
+          -moz-transition: 0.5s ease-in;
+          -ms-transition: 0.5s ease-in;
+          -o-transition: 0.5s ease-in;
+        }
+      }
+    }
+  }
+}

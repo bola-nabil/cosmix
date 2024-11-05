@@ -1,0 +1,104 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+.features-boxs {
+  .features__icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    @include sizing("small") {
+      margin-left: 50px;
+    }
+    ul {
+      display: flex;
+      @include sizing("small") {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      li {
+        a {
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+          background: #f8f8f8;
+          padding: 30px 40px;
+          i {
+            color: #555;
+            font-size: 25px;
+            @include sizing("small") {
+              margin-bottom: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .features__content {
+    padding-left: 100px;
+    padding-right: 50px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+    @include sizing("small") {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      padding: 0 5px;
+    }
+    .content__box {
+      position: relative;
+      display: none;
+      &.first {
+        display: block;
+      }
+      h3 {
+        font-size: 20px;
+        padding-bottom: 10px;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 70px;
+          height: 2px;
+          left: 0;
+          top: 30px;
+          background-color: $main-color;
+        }
+      }
+      p:first-of-type {
+        padding: 15px 0;
+      }
+      p {
+        line-height: 1.7;
+        color: $text-color;
+        font-weight: bolder;
+        text-align: justify;
+        @include sizing("small") {
+          font-size: 13px;
+        }
+      }
+    }
+    .features__image {
+      display: none;
+      &.first {
+        display: block;
+      }
+      img {
+        width: 450px;
+        height: 250px;
+        @include sizing("small") {
+          max-width: 320px;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+.click-active {
+  display: block !important;
+}
+
+.click-active + .features__image {
+  display: block !important;
+}
+
+.active-border {
+  border-bottom: 2px solid #e73131;
+}

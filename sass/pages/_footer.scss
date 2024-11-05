@@ -1,0 +1,92 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .footer__title {
+    text-transform: capitalize;
+    margin: 40px 0 40px 0;
+    color: #444;
+    font-size: 19px;
+  }
+  .footer-links {
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      gap: 30px;
+      @include sizing("small") {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
+      }
+      li {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #777;
+        transition: transform 0.3s;
+        &:hover {
+          animation: zoomInOut 1s infinite;
+          -webkit-animation: zoomInOut 1s infinite;
+        }
+        a {
+          &:hover > .fa-facebook-f {
+            color: #1877f2;
+          }
+          &:hover > .fa-twitter {
+            color: #1da1f2;
+          }
+          &:hover > .fa-linkedin-in {
+            color: #0a66c2;
+          }
+          &:hover > .fa-google-plus-g {
+            color: #db4437;
+          }
+          &:hover > .fa-instagram {
+            color: #833ab4;
+          }
+          &:hover > .fa-youtube {
+            color: #ff0000;
+          }
+          &:hover > .fa-github {
+            color: #181717;
+          }
+          i {
+            color: #555;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .footer-copyright {
+    a {
+      color: $main-color;
+    }
+    @include sizing("small") {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Zoomed in */
+  }
+  100% {
+    transform: scale(1); /* Back to normal size */
+  }
+}

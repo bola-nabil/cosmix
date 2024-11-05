@@ -1,0 +1,124 @@
+@use "../thems" as *;
+@use "../media-sizing" as *;
+
+.blog {
+  .blog-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-left: 130px;
+    padding-right: 50px;
+    @include sizing("small") {
+      padding: 0 20px;
+    }
+    @include sizing("medium") {
+      padding: 0 10px;
+    }
+    margin: 0 auto;
+    .blog-box {
+      position: relative;
+      @include sizing("small") {
+        margin-bottom: 20px;
+      }
+      .blog__img {
+        margin-bottom: 15px;
+        img {
+          width: 340px;
+          height: 150px;
+          @include sizing("medium") {
+            width: 300px;
+          }
+        }
+      }
+      .img__text {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        background-color: #555;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        h3 {
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: bolder;
+        }
+        p:first-of-type {
+          font-weight: bolder;
+        }
+      }
+      .blog__title {
+        color: #555;
+        font-size: 21px;
+        font-weight: bolder;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      .blog__links {
+        display: flex;
+        gap: 30px;
+        margin-top: 10px;
+        .blog__links__one {
+          display: flex;
+          gap: 10px;
+          i {
+            color: #777;
+            font-size: 15px;
+          }
+          p {
+            text-transform: capitalize;
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 15px;
+            margin-top: -2px;
+            &:hover {
+              color: $main-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .blog__pra {
+        text-align: justify;
+        color: #777;
+        margin-bottom: 10px;
+        @include sizing("medium") {
+          width: 300px;
+        }
+      }
+      .blog__link {
+        text-transform: capitalize;
+        color: #666;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .blog-support {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding-left: 100px;
+    padding-right: 50px;
+    margin: 50px auto;
+    .support-box {
+      a {
+        opacity: 0.2;
+        animation-name: support-part;
+        animation-duration: 4s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+}
+@keyframes support-part {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
