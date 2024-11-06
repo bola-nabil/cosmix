@@ -68,7 +68,7 @@
       @include sizing("small") {
         .form-name,
         .form-email {
-          width: 75%;
+          width: 50%;
         }
       }
       @include sizing("medium") {
@@ -84,7 +84,7 @@
       }
       @include sizing("small") {
         input {
-          width: 75%;
+          width: 50%;
         }
       }
       @include sizing("medium") {
@@ -102,7 +102,7 @@
         height: 100px;
         resize: none;
         @include sizing("small") {
-          width: 75%;
+          width: 50%;
         }
         @include sizing("medium") {
           width: 75%;

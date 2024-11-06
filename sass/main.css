@@ -1278,7 +1278,7 @@ ul {
 @media (max-width: 600px) {
   .contact .contact-boxs .contact-form .form-name,
   .contact .contact-boxs .contact-form .form-email {
-    width: 75%;
+    width: 50%;
   }
 }
 @media (min-width: 601px) and (max-width: 852px) {
@@ -1294,7 +1294,7 @@ ul {
 }
 @media (max-width: 600px) {
   .contact .contact-boxs .contact-form input {
-    width: 75%;
+    width: 50%;
   }
 }
 @media (min-width: 601px) and (max-width: 852px) {
@@ -1314,7 +1314,7 @@ ul {
 }
 @media (max-width: 600px) {
   .contact .contact-boxs .contact-form textarea {
-    width: 75%;
+    width: 50%;
   }
 }
 @media (min-width: 601px) and (max-width: 852px) {
