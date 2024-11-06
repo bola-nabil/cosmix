@@ -43,7 +43,7 @@
       @include sizing("small") {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: 90vw;
       }
       @include sizing("medium") {
         display: flex;
